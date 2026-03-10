@@ -77,4 +77,4 @@ class UserProfileUpdateSerializer(serializers.ModelSerializer):
         fields = ('username', 'last_name', 'first_name', 'tg_username', 'email')
         read_only_fields = ('username',)
 
-    
+     
