@@ -3,6 +3,7 @@
 """
 from rest_framework import viewsets, permissions, status, generics
 from rest_framework.decorators import api_view
+from rest_framework.parsers import FormParser, MultiPartParser
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.contrib.auth import authenticate, login, logout, get_user_model
@@ -138,6 +139,7 @@ class UpdateProfileView(generics.UpdateAPIView):
     serializer_class = UserProfileUpdateSerializer
     permission_classes = [permissions.IsAuthenticated]
     authentication_classes = [JWTAuthentication] 
+    pasrser_classes = [MultiPartParser, FormParser]
 
     def get_object(self):
         # метод для получения текущего пользователя

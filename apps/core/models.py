@@ -16,6 +16,12 @@ class User(AbstractUser):
     # Модель пользователя
 
 
+    avatar = models.ImageField(
+        verbose_name='Аватарка',
+        null=True,
+        blank=True
+    )
+
     tg_username = models.CharField(
     verbose_name='Username в Telegram',
     max_length=100,

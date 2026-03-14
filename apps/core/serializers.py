@@ -52,10 +52,11 @@ class UserProfileSerializer(serializers.ModelSerializer):
     # Сериализатор профиля пользователя (для фронтенда)
 
     favorite_games = serializers.SerializerMethodField()
+    avatar = serializers.ImageField()
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'first_name', 'last_name', 'tg_username', 'date_joined', 'is_moderator', 'favorite_games')
+        fields = ('id', 'username', 'email', 'first_name', 'last_name', 'tg_username', 'date_joined', 'is_moderator', 'favorite_games', 'avatar')
         read_only_fields = ['id', 'date_joined', 'is_moderator']
 
     def get_favorite_games(self, obj):
@@ -74,7 +75,7 @@ class UserProfileUpdateSerializer(serializers.ModelSerializer):
     # Сериализатор обновления профиля пользователя
     class Meta:
         model = User
-        fields = ('username', 'last_name', 'first_name', 'tg_username', 'email')
+        fields = ('username', 'last_name', 'first_name', 'tg_username', 'email', 'avatar')
         read_only_fields = ('username',)
 
      

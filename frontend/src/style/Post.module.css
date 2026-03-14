@@ -29,12 +29,6 @@
     margin-bottom: 15px;
 }
 
-.post_author {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
 .author_avatar {
     width: 45px;
     height: 45px;
@@ -254,4 +248,22 @@ button.stat_item:hover {
         padding: 15px;
         flex: 0.9;
     }
+}
+
+.author_avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #6366f1; /* синий фон, если нет картинки */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* чтобы картинка не вылезала за круг */
+    font-size: 20px; /* для эмодзи-заглушки */
+}
+
+.avatar_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* картинка заполнит весь круг, сохраняя пропорции */
 }
