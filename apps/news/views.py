@@ -84,7 +84,7 @@ class NewsViewSet(viewsets.ModelViewSet):
         
         text = f"""{news.title}
         {news.short_description}
-        Читать: https://127.0.0.1:3000/news/{news.id}
+        Читать: https://127.0.0.1:3000
         """
 
         for user in subscribers:
