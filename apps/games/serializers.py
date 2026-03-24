@@ -23,7 +23,7 @@ class GameSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'name', 'genres', 'version', 'developer', 'download_link',
             'interface_language', 'voice_language', 'release_date',
-            'min_requirements', 'rec_requirements', 'description', 'created_at'
+            'min_requirements', 'rec_requirements', 'description', 'created_at',
         ]
 
 class GameShortSerializer(serializers.ModelSerializer):

@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404
-from rest_framework import generics, viewsets, permissions, status
+from rest_framework import generics, viewsets, permissions, status, filters
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
 from .models import Game, Genre, FavoriteGame
@@ -93,4 +93,10 @@ def check_favorite(request, game_id):
 
     return Response({'is_favorite': is_favorite})
 
+
+class GameListView(generics.ListAPIView):
+    queryset = Game.objects.all()
+    serializer_class = GameSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['name']
     
