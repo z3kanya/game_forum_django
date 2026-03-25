@@ -74,6 +74,14 @@ class Game(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата добавления")
 
+    
+    cover = models.ImageField(
+        upload_to='games/covers',
+        blank=True,
+        null=True,
+        verbose_name="Обложка"
+    ) 
+
     class Meta:
         verbose_name = "Игра"
         verbose_name_plural = "Игры"
@@ -104,3 +112,21 @@ class FavoriteGame(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.game.name}"
+    
+class Screenshot(models.Model):
+    # Скриншоты игры
+    game = models.ForeignKey(
+        Game,
+        on_delete=models.CASCADE,
+        related_name='screenshots',
+        verbose_name='Игра'
+    )
+    image = models.ImageField(
+        upload_to='games/screenshots',
+        verbose_name='Изображение'
+    )
+
+
+    class Meta:
+        verbose_name = "Скриншот"
+        verbose_name_plural = "Скриншоты"
