@@ -1,0 +1,35 @@
+# Виртуальное окружение (если создано локально)
+venv/
+env/
+.venv/
+
+# Кэш Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Логи и базы данных
+*.log
+*.sqlite3
+*.db
+
+# Переменные окружения (секреты)
+.env
+
+# Системные папки Git
+.git/
+.gitignore
+
+# Папки с медиафайлами и статикой (они будут проброшены volume)
+media/
+staticfiles/
+static/
+
+# Фронтенд (node_modules и сборки)
+frontend/node_modules/
+frontend/build/
+frontend/.next/
+
+# Временные файлы
+*.tmp
+.DS_Store
