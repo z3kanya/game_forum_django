@@ -164,10 +164,28 @@ pip install -r requirements-optional.txt
 - Тестирования (pytest)
 - И других функций
 
-## Команда
 
-- Team Lead: [Ваше имя]
-- Developer 1: [Имя разработчика 1]
-- Developer 2: [Имя разработчика 2]
-- Developer 3: [Имя разработчика 3]
 
+### Docker compose:
+
+### Запуск и остановка
+
+docker compose up -d                # запустить в фоне
+docker compose up -d --build        # пересобрать образ и запустить
+docker compose down                 # остановить (данные БД сохранятся)
+docker compose down -v              # остановить и удалить тома (сброс БД)
+docker compose restart web          # перезапустить только веб-контейнер
+
+### Логи и статус
+
+docker compose ps                   # статус контейнеров
+docker compose logs -f web          # следить за логами веб-контейнера
+docker compose logs -f db           # следить за логами БД
+
+
+### Команды внутри контейнера (миграции, shell и т.д.)
+
+docker compose exec web python manage.py migrate
+docker compose exec web python manage.py createsuperuser
+docker compose exec web python manage.py shell
+docker compose exec web sh           # войти в оболочку контейнера
