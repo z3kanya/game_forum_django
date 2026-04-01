@@ -6,7 +6,7 @@
 
 ### Шаги:
 1. POST /api/core/register/
-2. Body: { "username": "testuser1", "email": "test1@example.com", "password": "TestPass123", "password2": "TestPass123" }
+2. Body: { "username": "testuser2", "email": "test2@example.com", "password": "TestPass123", "password2": "TestPass123" }
 
 ### Ожидаемые результаты: статус 201, в ответе id, username, email
 
