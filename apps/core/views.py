@@ -101,7 +101,7 @@ class LoginView(APIView):
         return Response({
             'success': False,
             'errors': 'Неправильное имя пользователя или пароль'
-        }, status=status.HTTP_400_UNAUTHORIZED)
+        }, status=status.HTTP_401_UNAUTHORIZED)
     
 
 class LogoutView(APIView):
